@@ -42,7 +42,27 @@ namespace TicTacToeGame
                 {
                     Console.WriteLine("\n");
                 }
-                Console.Write(board[i] + "|");
+                Console.Write("|" + board[i] + "|");
+            }
+        }
+
+        public void MoveToLocation(char letter)
+        {
+            Console.WriteLine("Enter Location index from 1 to 9");
+            int location = Convert.ToInt32(Console.ReadLine());
+            if (location < 1 || location > 9)
+            {
+                Console.WriteLine("Not valid index");
+                MoveToLocation(letter);
+            }
+            else if (board[location] == ' ')
+            {
+                board[location] = letter;
+            }
+            else
+            {
+                Console.WriteLine("Location already filled");
+                MoveToLocation(letter);
             }
         }
     }

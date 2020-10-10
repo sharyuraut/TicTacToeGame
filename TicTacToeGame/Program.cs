@@ -11,11 +11,13 @@ namespace TicTacToeGame
             TicTacToe tictactoe = new TicTacToe();
             //Calls create board
             tictactoe.CreateBoard();
-            //Calls PlayerChoice method
+
             char playerLetter = tictactoe.PlayerChoice();
-            char computerLetter = tictactoe.PlayerChoice();
+            //Calls MaveToLocation Method
+            tictactoe.MoveToLocation(playerLetter);
             //Class DisplayBoard method
             tictactoe.DisplayBoard();
+
         }
     }
 }
