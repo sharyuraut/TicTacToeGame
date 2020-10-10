@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace TicTacToeGame
 {
     class TicTacToe
     {
+        char[] board = new char[10];
         //Create Board method
         public void CreateBoard()
         {
-            char[] board = new char[10];
             for (int i = 1; i <= 9; i++)
             {
                 board[i] = ' ';
@@ -30,6 +31,19 @@ namespace TicTacToeGame
 
             PlayerChoice();
             return ' ';
+        }
+
+        public void DisplayBoard()
+        {
+            int i;
+            for (i = 1; i <= 9; i++)
+            {
+                if (i == 4 || i == 7)
+                {
+                    Console.WriteLine("\n");
+                }
+                Console.Write(board[i] + "|");
+            }
         }
     }
 }

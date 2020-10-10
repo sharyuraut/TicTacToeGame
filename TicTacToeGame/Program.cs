@@ -14,6 +14,8 @@ namespace TicTacToeGame
             //Calls PlayerChoice method
             char playerLetter = tictactoe.PlayerChoice();
             char computerLetter = tictactoe.PlayerChoice();
+            //Class DisplayBoard method
+            tictactoe.DisplayBoard();
         }
     }
 }
