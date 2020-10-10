@@ -9,7 +9,9 @@ namespace TicTacToeGame
             Console.WriteLine("Welcome to Tic Tac Toe Game!");
 
             TicTacToe tictactoe = new TicTacToe();
+            //Calls create board
             tictactoe.CreateBoard();
+            //Calls PlayerChoice method
             char playerLetter = tictactoe.PlayerChoice();
             char compuerLetter = tictactoe.PlayerChoice();
         }
