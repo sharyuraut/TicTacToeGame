@@ -7,6 +7,7 @@ namespace TicTacToeGame
     class TicTacToe
     {
         //Create Board method
+
         public void CreateBoard()
         {
             char[] board = new char[10];
@@ -25,6 +26,8 @@ namespace TicTacToeGame
             {
                 return choice;
             }
+            else
+                Console.WriteLine("Enter a valid choice.");
 
             PlayerChoice();
             return ' ';
