@@ -6,7 +6,8 @@ namespace TicTacToeGame
 {
     class TicTacToe
     {
-        //Creating board
+        //Create Board method
+
         public void CreateBoard()
         {
             char[] board = new char[10];
@@ -15,8 +16,7 @@ namespace TicTacToeGame
                 board[i] = ' ';
             }
         }
-
-        //Let player and computer choose X or O
+        //Method to let player choose X or O
         public char PlayerChoice()
         {
             char choice;
