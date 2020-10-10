@@ -6,6 +6,7 @@ namespace TicTacToeGame
 {
     class TicTacToe
     {
+        //Creating board
         public void CreateBoard()
         {
             char[] board = new char[10];
@@ -15,15 +16,18 @@ namespace TicTacToeGame
             }
         }
 
+        //Let player and computer choose X or O
         public char PlayerChoice()
         {
             char choice;
             Console.WriteLine("Enter X or O");
             choice = Convert.ToChar(Console.ReadLine());
-            if (choice == 'X' || choice == 'O')
+            if (choice == 'X' || choice == 'O' || choice == 'x' || choice == 'o')
             {
                 return choice;
             }
+            else
+                Console.WriteLine("Enter a valid choice.");
 
             PlayerChoice();
             return ' ';
