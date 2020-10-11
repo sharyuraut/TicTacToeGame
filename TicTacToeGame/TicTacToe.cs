@@ -49,27 +49,45 @@ namespace TicTacToeGame
             Console.WriteLine("|");
         }
 
-        public void MoveToLocation(char letter)
+        public int MoveToLocation()
         {
             Console.WriteLine("Enter Location index from 1 to 9");
             int location = Convert.ToInt32(Console.ReadLine());
             if (location < 1 || location > 9)
             {
                 Console.WriteLine("Not valid index");
-                MoveToLocation(letter);
+                MoveToLocation();
+
             }
-            else if (board[location] == ' ')
-            {
-                board[location] = letter;
-            }
-            else
+            if (isSpaceFree(location) == false)
             {
                 Console.WriteLine("Location already filled");
-                MoveToLocation(letter);
+                MoveToLocation();
             }
+            return location;
+
         }
 
-        public string PlayerChance()
+        public void MakeAMove(int location, char letter)
+        {
+            board[location] = letter;
+        }
+        public bool isSpaceFree(int location)
+        {
+            return (board[location] == ' ');
+
+        }
+
+        public string PlayerChance(string player)
+        {
+            if (player == "USER")
+            {
+                return "COMPUTER";
+            }
+            return "USER";
+        }
+
+        public string PlayerStartingFirst()
         {
             Random random = new Random();
             int toss = random.Next(0, 2);
@@ -78,6 +96,26 @@ namespace TicTacToeGame
                 return "USER";
             }
             return "COMPUTER";
+        }
+
+        public bool CheckWinner(char playerLetter)
+        {
+            return ((board[1] == playerLetter && board[2] == playerLetter && board[3] == playerLetter) ||
+                    (board[1] == playerLetter && board[4] == playerLetter && board[7] == playerLetter) ||
+                    (board[1] == playerLetter && board[5] == playerLetter && board[9] == playerLetter) ||
+                    (board[3] == playerLetter && board[6] == playerLetter && board[9] == playerLetter) ||
+                    (board[3] == playerLetter && board[5] == playerLetter && board[7] == playerLetter) ||
+                    (board[7] == playerLetter && board[8] == playerLetter && board[9] == playerLetter)
+                   );
+        }
+        public bool CheckDraw()
+        {
+            for (int i = 0; i <= 9; i++)
+            {
+                if (isSpaceFree(i) == true)
+                    return false;
+            }
+            return true;
         }
     }
 }
