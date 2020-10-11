@@ -8,6 +8,8 @@ namespace TicTacToeGame
     class TicTacToe
     {
         char[] board = new char[10];
+        public static int HEADS = 1;
+        public static int TAILS = 0;
         //Create Board method
         public void CreateBoard()
         {
@@ -65,6 +67,17 @@ namespace TicTacToeGame
                 Console.WriteLine("Location already filled");
                 MoveToLocation(letter);
             }
+        }
+
+        public string PlayerChance()
+        {
+            Random random = new Random();
+            int toss = random.Next(0, 2);
+            if (toss == HEADS)
+            {
+                return "USER";
+            }
+            return "COMPUTER";
         }
     }
 }

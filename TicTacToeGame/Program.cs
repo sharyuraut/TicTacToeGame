@@ -12,6 +12,8 @@ namespace TicTacToeGame
             //Calls create board
             tictactoe.CreateBoard();
 
+            string player = tictactoe.PlayerChance();
+
             char playerLetter = tictactoe.PlayerChoice();
             //Calls MaveToLocation Method
             tictactoe.MoveToLocation(playerLetter);
