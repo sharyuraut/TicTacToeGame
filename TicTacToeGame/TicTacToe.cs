@@ -40,10 +40,11 @@ namespace TicTacToeGame
             {
                 if (i == 4 || i == 7)
                 {
-                    Console.WriteLine("\n");
+                    Console.WriteLine("|" + "\n" + "........");
                 }
-                Console.Write(board[i] + "|");
+                Console.Write("|" + board[i]);
             }
+            Console.WriteLine("|");
         }
     }
 }
